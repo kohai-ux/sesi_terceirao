@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Script 5</title>
+    <script>
+    function acharMaiorMenor(){
+      var num1 = parseFloat(document.getElementById("num1").value);
+      var num2 = parseFloat(document.getElementById("num2").value);
+      var num3 = parseFloat(document.getElementById("num3").value);
+
+      var maior = Math.max(num1, num2, num3);
+      var menor = Math.min(num1, num2, num3);
+
+      alert("O maior número é " + maior + " e o menor número é " + menor);
+    }
+    </script>
+</head>
+<body>
+  Digite um numero:
+    <input type="text" id="num1">
+    <br>
+    Digite o segundo número:
+    <input type="text" id="num2">
+    <br>
+    Digite o terceiro número:
+    <input type="text" id="num3">
+    <button onclick="acharMaiorMenor()">Ok</button>
+</body>
+</html>

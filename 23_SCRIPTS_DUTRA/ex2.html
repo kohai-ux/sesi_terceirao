@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Script 2</title>
+    <script>
+        function calcularMedia() {
+            var nota1 = parseFloat(document.getElementById("nota1").value);
+            var nota2 = parseFloat(document.getElementById("nota2").value);
+            var media = (nota1 + nota2) / 2;
+            if (media == 10) {
+                alert("Aprovado distinção");
+            } else {
+                if (media >= 7) {
+                    alert("Aprovado");
+                } else {
+                    alert("Reprovado");
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    Digite a primeira nota:
+    <input type="text" id="nota1">
+    <br>
+    Digite a segunda nota:
+    <input type="text" id="nota2">
+    <button onclick="calcularMedia()">Ok</button>
+</body>
+</html>

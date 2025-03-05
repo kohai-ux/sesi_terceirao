@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Script 3</title>
+    <script>
+       function acharMaior() {
+            var num1 = parseFloat(document.getElementById("num1").value);
+            var num2 = parseFloat(document.getElementById("num2").value);
+            var num3 = parseFloat(document.getElementById("num3").value);
+            if (num1 > num2 && num1 > num3) {
+                alert("O maior número é " + num1);
+            } else {
+                if (num2 > num1 && num2 > num3) {
+                    alert("O maior número é " + num2);
+                } else {
+                    if (num3 > num1 && num3 > num2) {
+                        alert("O maior número é " + num3);
+                    } else {
+                        alert("Os números são iguais.");
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+  Digite o primeiro número:
+    <input type="text" id="num1">
+    <br>
+    Digite o segundo número:
+    <input type="text" id="num2">
+    <br>
+    Digite o terceiro número:
+    <input type="text" id="num3">
+    <button onclick="acharMaior()">Ok</button>
+</body>
+</html>
