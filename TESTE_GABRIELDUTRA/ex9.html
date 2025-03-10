@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 9</title>
+</head>
+<body>
+    <script>
+        function calcularFolhaPagamento() {
+            var horasTrabalhadas = parseFloat(prompt("Digite o número de horas trabalhadas no mês:"));
+            var valorHora = parseFloat(prompt("Digite o valor da hora trabalhada:"));
+
+            if (isNaN(horasTrabalhadas) || isNaN(valorHora)) {
+                alert("Por favor, insira valores numéricos válidos.");
+                return;
+            }
+
+            var salarioBruto = horasTrabalhadas * valorHora;
+            var descontoIR = 0;
+            var aliquotaIR = 0;
+
+            if (salarioBruto <= 2112.00) {
+                descontoIR = 0;
+                aliquotaIR = 0;
+            } else if (salarioBruto <= 2826.65) {
+                descontoIR = salarioBruto * 0.075;
+                aliquotaIR = 7.5;
+            } else if (salarioBruto <= 3751.05) {
+                descontoIR = salarioBruto * 0.15;
+                aliquotaIR = 15;
+            } else if (salarioBruto <= 4664.68) {
+                descontoIR = salarioBruto * 0.225;
+                aliquotaIR = 22.5;
+            } else {
+                descontoIR = salarioBruto * 0.275;
+                aliquotaIR = 27.5;
+            }
+
+            var descontoSindicato = salarioBruto * 0.03;
+            var fgts = salarioBruto * 0.11;
+            var salarioLiquido = salarioBruto - descontoIR - descontoSindicato;
+
+            alert(
+                "Folha de Pagamento:\n" +
+                "Salário Bruto: R$" + salarioBruto.toFixed(2) + "\n" +
+                "Desconto IR (" + aliquotaIR + "%): R$" + descontoIR.toFixed(2) + "\n" +
+                "Desconto Sindicato (3%): R$" + descontoSindicato.toFixed(2) + "\n" +
+                "FGTS (11%): R$" + fgts.toFixed(2) + "\n" +
+                "Salário Líquido: R$" + salarioLiquido.toFixed(2)
+            );
+        }
+        calcularFolhaPagamento();
+    </script>
+</body>
+</html>
+                
+</body>
+</html>

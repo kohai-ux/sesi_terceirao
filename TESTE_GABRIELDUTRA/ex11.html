@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 11</title>
+    Acima de 9.0 = A <br>
+    Entre 7.5 e 9.0 = B <br>
+    Entre 6.0 e 7.5 = C <br>
+    Entre 4.0 e 6.0 = D <br>
+    Entre 4.0 e 0 = E <br>
+    Insira sua nota aqui 
+    <input type="number" id="num1" >
+    <button onclick="enviar()">Enviar</button>
+    <script type="text/javascript">
+        function enviar() {
+            var num1 = parseFloat(document.getElementById("num1").value);
+
+            if(num1 >= 9.0){
+                alert('A')
+                }
+            else if(num1 >= 7.5 && num1 < 9.0){
+                alert('B')
+            }
+            else if(num1 >= 6.0 && num1 < 7.5){
+                alert('C')
+            }
+            else if(num1 >= 4.0 && num1 < 6.0){
+                alert('D')
+            } 
+            else if(num1 >= 0 && num1 < 4.0){
+                alert('E')
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

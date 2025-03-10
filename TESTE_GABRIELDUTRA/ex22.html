@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 22</title>
+    <script>
+        function calcularCombustivel() {
+            var litros = parseFloat(prompt("Digite o número de litros vendidos:"));
+            var tipo = prompt("Digite o tipo de combustível (A para álcool, G para gasolina):").toUpperCase();
+            var precoAlcool = 4.39;
+            var precoGasolina = 6.79;
+            var desconto = 0;
+            var valorTotal = 0;
+
+            if (tipo === "A") {
+                if (litros <= 20) {
+                    desconto = 0.03;
+                } else {
+                    desconto = 0.05;
+                }
+                valorTotal = litros * precoAlcool * (1 - desconto);
+            } else if (tipo === "G") {
+                if (litros <= 20) {
+                    desconto = 0.04;
+                } else {
+                    desconto = 0.06;
+                }
+                valorTotal = litros * precoGasolina * (1 - desconto);
+            } else {
+                alert("Tipo de combustível inválido.");
+                return;
+            }
+
+            alert("Valor a ser pago: R$" + valorTotal.toFixed(2));
+        }
+        calcularCombustivel();
+    </script>
+
+</head>
+<body>
+<p>Tabela de descontos de combustível <br>
+    Alcool: Até 20L: 3% por litro <br>
+    Acima de 20L: 5% por litro <br>
+    Gasolina: Até 20L: 4% por litro <br>
+    Acima de 20L: 6% por litro</p>
+</body>
+</html>

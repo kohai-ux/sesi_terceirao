@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 4</title>
+    Insira dois números inteiros aqui 
+    <input type="number" id="num1" >
+    <input type="number" id="num2" >
+    <button onclick="enviar()">Inverter</button>
+    <script>
+        function enviar() {
+            var num1 = parseFloat(document.getElementById("num1").value);
+            var num2 = parseFloat(document.getElementById("num2").value);
+            alert('Antes era ' + num1 + ' e agora é ' + -num1 + ', ' +
+                   'Antes era ' + num2 + ' e agora é ' + -num2 );
+        } 
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

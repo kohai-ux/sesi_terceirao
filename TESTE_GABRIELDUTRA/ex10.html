@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 10</title>
+    Insira um número
+    <input type="number" id="num1" >
+    <button onclick="enviar()">Descobrir o dia da semana</button>
+    <script type="text/javascript">
+        function enviar() {
+            var num1 = parseFloat(document.getElementById("num1").value);
+            if(num1 == 1){
+                alert('Domingo')
+            } else if(num1 == 2){
+                alert('Segunda-feira')
+            } else if(num1 == 3){
+                alert('Terça-feira')
+            } else if(num1 == 4){
+                alert('Quarta-feira')
+            } else if(num1 == 5){
+                alert('Quinta-feira')
+            } else if(num1 == 6){
+                alert('Sexta-feira')
+            } else if(num1 == 7){
+                alert('Sábado')
+            } else{
+                alert('Número inválido')
+            }
+
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

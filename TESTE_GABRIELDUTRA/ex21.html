@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 21</title>
+    <script>
+        function analisarCrime() {
+            var perguntas = [
+                "Telefonou para a vítima?",
+                "Esteve no local do crime?",
+                "Mora perto da vítima?",
+                "Devia para a vítima?",
+                "Já trabalhou com a vítima?"
+            ];
+            var respostas = [];
+            var contadorSim = 0;
+
+            for (var i = 0; i < perguntas.length; i++) {
+                var resposta = prompt(perguntas[i] + " (sim ou não)").toLowerCase();
+                while (resposta !== "sim" && resposta !== "não") {
+                    resposta = prompt("Resposta inválida. Responda com 'sim' ou 'não'.\n" + perguntas[i]).toLowerCase();
+                }
+                respostas.push(resposta);
+                if (resposta === "sim") {
+                    contadorSim++;
+                }
+            }
+
+            if (contadorSim === 2) {
+                alert("Suspeito");
+            } else if (contadorSim === 3 || contadorSim === 4) {
+                alert("Cúmplice");
+            } else if (contadorSim === 5) {
+                alert("Assassino");
+            } else {
+                alert("Inocente");
+            }
+        }
+        analisarCrime();
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

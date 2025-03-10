@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 13</title>
+    Insira a, b e c 
+    <input type="number" id="num1" >
+    <input type="number" id="num2" >
+    <input type="number" id="num3" >
+    <button onclick="enviar()">Descobrir as raízes</button>
+    <script type="text/javascript">
+        function enviar() {
+            var num1 = parseFloat(document.getElementById("num1").value);
+            var num2 = parseFloat(document.getElementById("num2").value);
+            var num3 = parseFloat(document.getElementById("num3").value);
+
+            var delta = (num2 * num2) - 4 * num1 * num3;
+            if (delta < 0) {
+                alert('Delta negativo, não existem raízes reais');
+            } else if (delta == 0) {
+                var raiz = -num2 / (2 * num1);
+                alert('Delta igual a zero, raiz única: ' + raiz);
+            } else {
+                var raiz1 = (-num2 + Math.sqrt(delta)) / (2 * num1);
+                var raiz2 = (-num2 - Math.sqrt(delta)) / (2 * num1);
+                alert('Raízes: ' + raiz1 + ' e ' + raiz2);
+            }
+
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

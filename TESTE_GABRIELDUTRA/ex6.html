@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 6</title>
+    Insira três números
+    <input type="number" id="num1" >
+    <input type="number" id="num2" >
+    <input type="number" id="num3" >
+    <button onclick="enviar()">Ordem decrescente!</button>
+    <script type="text/javascript">
+        function enviar() {
+            var num1 = parseFloat(document.getElementById("num1").value);
+            var num2 = parseFloat(document.getElementById("num2").value);
+            var num3 = parseFloat(document.getElementById("num3").value);
+
+            if(num1 > num2 && num1 > num3){
+                if(num2 > num3){
+                    alert(num1 + ', ' + num2 + ', ' + num3)
+                } else{
+                    alert(num1 + ', ' + num3 + ', ' + num2)
+                }
+            } else if(num2 > num1 && num2 > num3){
+                if(num1 > num3){
+                    alert(num2 + ', ' + num1 + ', ' + num3)
+                } else{
+                    alert(num2 + ', ' + num3 + ', ' + num1)
+                }
+            } else{
+                if(num1 > num2){
+                    alert(num3 + ', ' + num1 + ', ' + num2)
+                } else{
+                    alert(num3 + ', ' + num2 + ', ' + num1)
+                }
+
+            }
+            
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 15</title>
+    insira uma data 
+   <input type="text" id="data">
+    <button onclick="data()">Enviar</button>
+    <script>
+        function data() {
+            var data = document.getElementById("data").value;
+            var partes = data.split("/");
+            var dia = parseInt(partes[0]);
+            var mes = parseInt(partes[1]);
+            var ano = parseInt(partes[2]);
+
+            if (partes.length !== 3 || isNaN(dia) || isNaN(mes) || isNaN(ano)) {
+                alert("Data inválida. Formato esperado: dd/mm/aaaa");
+                return;
+            }
+
+            if (mes < 1 || mes > 12) {
+                alert("Mês inválido.");
+                return;
+            }
+
+            if (dia < 1 || dia > 31) {
+                alert("Dia inválido.");
+                return;
+            }
+
+            if ((mes === 4 || mes === 6 || mes === 9 || mes === 11) && dia > 30) {
+                alert("Dia inválido para o mês especificado.");
+                return;
+            }
+
+            if (mes === 2) {
+                var bissexto = (ano % 4 === 0 && ano % 100 !== 0) || ano % 400 === 0;
+                if (bissexto && dia > 29) {
+                    alert("Dia inválido para fevereiro em ano bissexto.");
+                    return;
+                } else if (!bissexto && dia > 28) {
+                    alert("Dia inválido para fevereiro em ano não bissexto.");
+                    return;
+                }
+            }
+
+            alert("Data válida.");
+        }
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

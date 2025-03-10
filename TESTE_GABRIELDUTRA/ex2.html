@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 2</title>
+    <input type="number" id="num1">
+    <button onclick="media()">Verificar nota</button>
+    <script>
+        function media() {
+            var nota = parseFloat(document.getElementById("num1").value);
+            
+            if (nota == 10) {
+                alert('Aprovado com distinção');
+            } else {
+                if(nota >= 7) {
+                    alert('Aprovado');
+                } else {
+                    alert('Reprovado');
+                }
+            
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
+

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 14</title>
+    Insira um ano aqui
+    <input type="number" id="ano">
+    <button onclick="ano()">Enviar</button>
+    <script>
+        function ano(){            
+            var ano = parseFloat(document.getElementById("ano").value);
+            if ((ano % 4 == 0 && ano % 100 != 0) || ano % 400 == 0) {
+                alert('O ano ' + ano + ' é bissexto');
+            } else {
+                alert('O ano ' + ano + ' não é bissexto');
+            }
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

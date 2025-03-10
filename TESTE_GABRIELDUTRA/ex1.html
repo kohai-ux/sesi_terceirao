@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 1</title>
+    Verifique se a letra é uma vogal ou consoante!
+    <input type="text" id="letra" placeholder="Insira uma letra">
+    <button onclick="verificar()">Verificar</button>
+    <script type="text/javascript">
+        function verificar() {
+            var letra = document.getElementById("letra").value.toLowerCase();
+            if (letra.length === 1) {
+                if (letra === 'a' || letra === 'e' || letra === 'i' || letra === 'o' || letra === 'u') {
+                    alert('A letra ' + letra + ' é uma vogal.');
+                } else {
+                    alert('A letra ' + letra + ' é uma consoante.');
+                }
+            } else {
+                alert('Por favor, insira apenas uma letra.');
+            }
+        }    
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

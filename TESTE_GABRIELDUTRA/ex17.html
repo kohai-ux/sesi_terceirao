@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 17</title>
+    <script>
+        function enviar() {
+            var num1 = parseFloat(document.getElementById("num1").value);
+            if (num1 >= 1000) {
+                alert('Número inválido, insira um número menor que 1000');
+            } else {
+                var centenas = Math.floor(num1 / 100);
+                var dezenas = Math.floor((num1 % 100) / 10);
+                var unidades = num1 % 10;
+                alert(centenas + ' centenas ,' +  dezenas + ' dezenas e ' + unidades + ' unidades.');
+            }
+        }
+    </script>
+</head>
+<body>    
+    Insira um número menor que 1000
+    <input type="number" id="num1">
+    <button onclick="enviar()">Enviar</button>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 8</title>
+    Reajustes de salário
+    Até R$1480,00 aumento de 20% <br />
+    Entre R$1480,00 e R$1900,00 aumento de 15% <br />
+    Entre R$1900,00 e R$2500,00 aumento de 10% <br />
+    A partir de R$2500,00 aumento de 5% <br />
+    Insira seu salário aqui 
+    <input type="number" id="num1" >
+    <button onclick="enviar()">Calcular reajuste</button>
+
+    <script type="text/javascript">
+        function enviar() {
+            var num1 = parseFloat(document.getElementById("num1").value);
+            var percentual;
+            var aumento;
+            var novoSalario;
+            if(num1 <= 1480){
+                percentual = 20;
+                aumento = num1 * 0.2;
+                novoSalario = num1 * 1.2;
+            } else if(num1 > 1480 && num1 <= 1900){
+                percentual = 15;
+                aumento = num1 * 0.15;
+                novoSalario = num1 * 1.15;
+            } else if(num1 > 1900 && num1 <= 2500){
+                percentual = 10;
+                aumento = num1 * 0.1;
+                novoSalario = num1 * 1.1;
+            } else{
+                percentual = 5;
+                aumento = num1 * 0.05;
+                novoSalario = num1 * 1.05;
+            }
+            alert('Salário anterior: R$' + num1 + '\nPercentual aplicado: ' + percentual + '%\nAumento: R$' + aumento + '\nNovo salário: R$' + novoSalario);
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
+  

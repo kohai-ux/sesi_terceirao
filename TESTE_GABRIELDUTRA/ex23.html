@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 23</title>
+    Tabela de preços <br>
+    Morango até 5kg: R$24,00 <br> 
+    acima de: 5kg R$20,00 <br>
+    Maçã até 5kg: R$14,80 <br> 
+    acima de: 5kg R$12,40 <br>
+</head>
+<body>
+    <script>
+        function calcularCompra() {
+            var kgMorango = parseFloat(prompt("Digite a quantidade em kg de morangos:"));
+            var kgMaca = parseFloat(prompt("Digite a quantidade em kg de maçãs:"));
+            var precoMorango = 0;
+            var precoMaca = 0;
+            var valorTotal = 0;
+            var desconto = 0;
+
+            if (kgMorango <= 5) {
+                precoMorango = 24.00;
+            } else {
+                precoMorango = 20.00;
+            }
+
+            if (kgMaca <= 5) {
+                precoMaca = 14.80;
+            } else {
+                precoMaca = 12.40;
+            }
+
+            valorTotal = (kgMorango * precoMorango) + (kgMaca * precoMaca);
+
+            if ((kgMorango + kgMaca) > 12 || valorTotal > 180.00) {
+                desconto = valorTotal * 0.10;
+            }
+
+            valorTotal -= desconto;
+
+            alert("Valor a ser pago: R$" + valorTotal.toFixed(2));
+        }
+        calcularCompra();
+    </script>
+
+</body>
+</html>

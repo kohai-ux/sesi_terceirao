@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 18</title>    <script>
+        function sacar() {
+            var valorSaque = parseInt(prompt("Digite o valor do saque (entre R$10 e R$900):"));
+
+            if (isNaN(valorSaque) || valorSaque < 10 || valorSaque > 900) {
+                alert("Valor inválido. O saque deve estar entre R$10 e R$900.");
+                return;
+            }
+
+            var notas100 = Math.floor(valorSaque / 100);
+            valorSaque %= 100;
+            var notas50 = Math.floor(valorSaque / 50);
+            valorSaque %= 50;
+            var notas10 = Math.floor(valorSaque / 10);
+
+            var mensagem = "Notas fornecidas:\n";
+            if (notas100 > 0) {
+                mensagem += notas100 + " nota(s) de R$100\n";
+            }
+            if (notas50 > 0) {
+                mensagem += notas50 + " nota(s) de R$50\n";
+            }
+            if (notas10 > 0) {
+                mensagem += notas10 + " nota(s) de R$10\n";
+            }
+
+            alert(mensagem);
+        }
+        sacar();
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

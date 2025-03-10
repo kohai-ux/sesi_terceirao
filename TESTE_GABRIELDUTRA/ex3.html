@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 3</title>
+    Insira três números aqui 
+    <input type="number" id="num1" >
+    <input type="number" id="num2" >
+    <input type="number" id="num3" >
+    <button onclick="enviar()">Enviar</button>
+    <script>
+        function enviar() {
+            var num1 = parseFloat(document.getElementById("num1").value);
+            var num2 = parseFloat(document.getElementById("num2").value);
+            var num3 = parseFloat(document.getElementById("num3").value);
+
+            if(num1 > num2 && num1 > num3)
+            alert(num1 + ' é o maior número')
+            else if(num2 > num1 && num2 > num3)
+            alert(num2 + ' é o maior número')
+            else
+            alert(num3 + ' é o maior número')
+        } 
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
