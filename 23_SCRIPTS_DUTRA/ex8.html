@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Script 8</title>
+    <script>
+       function calcularReajuste(){
+        let salario = parseFloat(document.getElementById('salario').value);
+        let porcentagem = 0;
+
+        if(salario<=1480){
+            porcentagem = 20;
+        }else if(salario<=1900){
+                porcentagem = 15;
+        }else if(salario<=2500){
+            porcentagem = 10;
+        }else{
+             porcentagem = 5;
+        }
+       
+        let aumento = (salario * porcentagem) / 100;
+        let novoSalario = salario + aumento;
+
+        alert('Salário antes do reajuste: R$ ' + salario.toFixed(2) + 
+        '\nPercentual de aumento: ' + porcentagem + '%' + 
+        '\nValor do aumento: R$ ' + aumento.toFixed(2) +
+        '\nNovo salário: R$' + novoSalario.toFixed(2));
+    }
+    </script>
+</head>
+<body>
+   <h2>Exercício 8: Cálculo de ajuste salarial</h2>
+   <label for="salario">Salário atual:</label>
+    <input type="number" id="salario" step="0.01"><br>
+    <button onclick="calcularReajuste()">Calcular Reajuste</button>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Script 10</title>
+    <script>
+      function exibirDiaDaSemana(){
+        let numero = parseInt(document.getElementById('dia').value);
+        let dia = '';
+
+        if(numero == 1){
+            dia = 'Domingo';
+        }else if(numero == 2){
+            dia = 'Segunda-feira';
+        }else if(numero == 3){  
+            dia = 'Terça-feira';
+        }else if(numero == 4){
+            dia = 'Quarta-feira';
+        }else if(numero == 5){
+            dia = 'Quinta-feira';
+        }else if(numero == 6){
+            dia = 'Sexta-feira';
+        }else if(numero == 7){
+            dia = 'Sábado';
+        }else{
+            dia = 'Valor inválido!';
+        }
+        alert(dia);
+
+      }
+    </script>
+</head>
+<body>
+    <h2>Exercício 10: Exibir dia da semana</h2>
+    <label for="dia">Digite um número de 1 a 7:</label>
+    <input type="number" id="dia" min="1" max="7"><br>
+    <button onclick="exibirDiaDaSemana()">Exibir</button>
+</body>
+   
+</html>

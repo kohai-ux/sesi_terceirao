@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Script 7</title>
+    <script>
+        function escolherTurno(){
+            var turno = document.getElementById('turno').value;
+           if(turno == 'M' || turno == 'm'){
+               alert('Bom dia!');
+              }else if(turno == 'V' || turno == 'v'){
+                  alert('Boa tarde!');
+                }else if(turno == 'N' || turno == 'n'){
+                    alert('Boa noite!');}
+                    else{
+                        alert('Valor inválido!');
+                    }
+        }
+    </script>
+</head>
+<body>
+    Digite qual o turno que você estuda:<br>
+    M = Matutino<br>
+    V = Vespertino<br>
+    N = Noturno<br>
+    <input type="text" id="turno"><br>
+    <button onclick="escolherTurno()">OK</button>
+
+</body>
+</html>

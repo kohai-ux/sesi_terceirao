@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Script 10</title>
+    <script>
+     function calcularMedia(){
+        let nota1 = parseFloat(document.getElementById('nota1').value);
+        let nota2 = parseFloat(document.getElementById('nota2').value);
+        let media = (nota1 + nota2) / 2;
+        
+        let conceito = '';
+        if(media>=9){
+            conceito = 'A';
+            status = 'Aprovado';
+        }else if(media>=7.5){
+            conceito = 'B';
+            status = 'Aprovado';
+        }else if(media>=6){
+            conceito = 'C';
+            status = 'Aprovado';
+        }else if(media>=4){
+            conceito = 'D';
+            status = 'Reprovado';
+        }else{
+            conceito = 'E';
+            status = 'Reprovado';
+        }
+        alert('Nota 1: ' + nota1 + '\nNota 2: ' + nota2 + 'Média: ' + media.toFixed(2) + '\nConceito: ' + conceito + '\nStatus: ' + status);
+     }
+    </script>
+</head>
+<body>
+    <h2>Exercício 11: Calculo de média e conceito</h2>
+   <label for="nota1">Digite a primeira nota</label>
+    <input type="number" id="nota1"><br>
+    <label for="nota2">Digite a segunda nota</label>
+    <input type="number" id="nota2"><br>
+    <button onclick="calcularMedia()">Calcular Média</button>
+</body>
+   
+</html>

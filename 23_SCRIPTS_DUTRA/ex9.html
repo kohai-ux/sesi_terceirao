@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Script 9</title>
+    <script>
+       function calcularFolhaPagamento(){
+        let valorHora = parseFloat(document.getElementById('valorHora').value);
+        let horasTrabalhadas = parseFloat(document.getElementById('horasTrabalhadas').value);
+        let salarioBruto = valorHora * horasTrabalhadas;
+        
+        let descontoIr = 0;
+
+        if(salarioBruto>4664.68){
+            descontoIr = (salarioBruto * 0.275);
+        }else if(salarioBruto>3751.05){
+            descontoIr = (salarioBruto * 0.225);
+        }else if(salarioBruto>2826.65){
+            descontoIr = (salarioBruto * 0.15);
+        }else if(salarioBruto>2112){
+            descontoIr = (salarioBruto * 0.075);
+        }
+
+        let descontoSindicato = (salarioBruto * 0.03);
+        let fgts = (salarioBruto * 0.11);
+        let salarioLiquido = salarioBruto - descontoIr - descontoSindicato;
+
+        alert('Salário Bruto: R$ ' + salarioBruto.toFixed(2) +
+        '\n(-) IR R$ ' + descontoIr.toFixed(2) +
+        '\n(-) Sindicato: R$ ' + descontoSindicato.toFixed(2) +
+        '\nFGTS (11%): R$ ' + fgts.toFixed(2) +
+        '\nSalário Líquido: R$ ' + salarioLiquido.toFixed(2));
+
+
+    }
+    </script>
+</head>
+<body>
+    <h2>Exercício 9: Cálculo de folha de pagamento</h2>
+    <label for="valorHora">Valor da Hora</label>
+    <input type="number" id="valorHora" step="0.01"><br>
+
+    <label for="horasTrabalhadas">Horas Trabalhadas</label>
+    <input type="number" id="horasTrabalhadas" step="0.01"><br>
+
+    <button onclick="calcularFolhaPagamento()">Calcular Reajuste</button>
+</body>
+</html>
