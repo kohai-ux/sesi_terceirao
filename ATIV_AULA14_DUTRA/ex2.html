@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de aérea</title>
+    <script>
+            function calcularArea(a,b)
+            {
+                return a * b;
+            }
+            function area(){
+                let base = document.getElementById('base').value;
+                let altura = document.getElementById('altura').value;
+                
+                if(base == 0 || altura == 0){
+                    return alert('Insira um valor válido');
+                } else if(base == altura){
+                    return alert('Insira um RETÂNGULO, não um QUADRADO');
+                } else {
+                    let resultado = calcularArea(base,altura);
+                    return alert(`A área do retângulo é ${resultado}`);
+                }
+                 
+            }
+            
+           
+    </script>
+</head>
+<body>
+    Insira os valores dos lados:
+    <input type="number" id="base" value="" placeholder="Base"> -
+    <input type="number" id="altura"  value="" placeholder="Altura">
+    <button onclick="area()">Calcular</button>
+</body>
+</html>

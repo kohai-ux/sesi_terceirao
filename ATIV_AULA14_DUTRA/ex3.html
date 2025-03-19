@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular fatorial</title>
+    <script>
+        function calcularFatorial(numero){
+            let resultado = 1;
+            for(let i = numero; i > 0; i--){
+                resultado *= i;
+            }
+            return resultado;
+        }
+        function calculo(){
+            let numero = document.getElementById('fatorial').value;
+            alert(calcularFatorial(numero));
+        }
+
+    </script>
+</head>
+<body>
+    <input type="number"  id="fatorial" value="" placeholder="Insira um número">
+    <button onclick="calculo()">Calcular</button>
+</body>
+</html>

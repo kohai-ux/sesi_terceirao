@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números primos</title>
+    <script>
+        function ehPrimo (numero){
+            if(numero <= 1){
+                return false;
+            }
+            for(let i = 2; i < numero; i++){
+                if(numero % i === 0){
+                    return false;
+                }
+            }
+            return true;
+        }
+        function verificar(){
+            let numero = document.getElementById("numero").value;
+            if(ehPrimo(numero)){
+                alert("O número " + numero + " é primo");
+            }else{
+                alert("O número " + numero + " não é primo");
+            }
+        }
+    </script>
+</head>
+<body>
+    Escreva um número para saber se ele é primo ou não:
+    <input type="number" id="numero" value="" placeholder="Insira um número">
+    <button onclick="verificar()">Verificar</button"> 
+</body>
+</html>
