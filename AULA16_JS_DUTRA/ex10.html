@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somar os dígitos</title>
+    <script>
+        const numero = 12345;
+
+        const numeroString = numero.toString();
+
+        
+        const digitosString = numeroString.split("");
+
+       
+        const digitosNumeros = digitosString.map(Number);
+
+
+        const somaDosDigitos = digitosNumeros.reduce((acumulador, digito) => acumulador + digito, 0);
+
+        console.log("Número original:", numero);
+        console.log("Dígitos (como números):", digitosNumeros);
+        console.log("Soma dos dígitos:", somaDosDigitos);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
