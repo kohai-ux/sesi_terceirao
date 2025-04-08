@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herança</title>
+    <script>
+        class formaGeometrica {
+            calcularArea(){
+                return "método não implementado"
+            }
+        }
+
+        class Quadrado extends formaGeometrica{
+            constructor(lado){
+                super();
+                this.lado = lado;
+            }
+            calcularArea(){
+                return this.lado**2
+            }
+        }
+
+        class Triangulo extends formaGeometrica{
+            constructor(Lado){
+                super();
+                this.lado = Lado;
+            }
+
+            //Sobrescrevendo o método da classe pai
+
+            calcularArea(){
+                return this.lado**2*Math.sqrt(3)/4;
+            }
+        }
+
+        class Hexagono extends formaGeometrica{
+            constructor(Lado){
+                super();
+                this.lado = Lado;
+            }
+            calcularArea(){
+                return (3 * this.lado**2 * Math.sqrt(3)) / 2;
+            }
+            
+        }
+
+        const quadrado = new Quadrado(6);
+        console.log(`O quadrado tem área: ${quadrado.calcularArea()}`);
+
+        const triangulo = new Triangulo(6);
+        console.log(`O triangulo tem área: ${triangulo.calcularArea()}`);
+
+        const hexagono = new Hexagono(6);
+        console.log(`O hexagono tem área: ${hexagono.calcularArea()}`);
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

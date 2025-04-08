@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carros</title>
+    <script>
+        class Veiculo {
+            constructor (cor,modelo,ano){
+                this.cor = cor;
+                this.modelo = modelo;
+                this.ano = ano;
+            }
+           ligar(){
+            console.log(`${this.modelo} acelerar!`)
+            console.log(`${this.modelo} enpinar!`)
+           }
+        }
+
+        const camaro = new Veiculo("amarelo","camaro",2022);
+        console.log(camaro)  
+        console.log(camaro.cor);
+        console.log(camaro.ano);
+        console.log(camaro.ligar());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
