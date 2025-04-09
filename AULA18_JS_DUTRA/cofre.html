@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cofre digital</title>
+    <script>
+        class Cofre {
+            #segredo = "";
+            #senha = "1234";
+            #tentativas = 0;
+            #bloqueado = false;
+            #limiteCaracteres = 50;
+
+            GuardarSegredo(NovoSegredo) {
+                if (this.#bloqueado) {
+                    console.log("cofre bloqueado");
+                    return false;
+                }
+
+                if (NovoSegredo.lenght > this.#limiteCaracteres) {
+                    console.log(`segredo muito longo! Máximo: ${this.#limiteCaracteres} caracterres`)
+                }
+
+                this.#segredo = NovoSegredo;
+                console.log("Segredo guardado com sucesso");
+                return true;
+            }
+
+            lerSegredo(senhaDigitada) {
+                if (this.#bloqueado) {
+                    console.log("Cofre bloqueado!");
+                    return "";
+                }
+
+                if (senhaDigitada === this.#senha) {
+                    this.#tentativas = 0;
+                    return this.#segredo;
+                }
+                else {
+                    this.#tentativas++;
+                    console.log(`Senha incorreta! Tentativas: ${this.#tentativas}/3`)
+
+                    if (this.#tentativas >= 3) {
+                        this.#bloquear();
+                    }
+                    return "";
+                }
+            }
+            redefinirSenha(senhaAntiga, novaSenha) {
+                if (this.#bloqueado) {
+                    console.log("Cofre bloqueado!")
+                    return false;
+                }
+
+                if (senhaAntiga === this.#senha) {
+                    this.#senha = novaSenha
+                    console.log("senha alterada com sucesso")
+                    return true;
+                }
+                else {
+                    console.log("senha atual incorreta")
+                    return false;
+                }
+            }
+            status() {
+                return {
+                    bloqueado: this.#bloqueado,
+                    tamanhoSegredo: this.#segredo.length,
+                    caracteresDisponiveis: this.#limiteCaracteres - this.#segredo.lenght,
+
+                }
+            }
+
+            #bloquear() {
+                this.#bloqueado = true
+                console.log("cofre foi bloqueado por segurança!")
+            }
+        }
+
+        const cofre = new Cofre();
+
+        cofre.GuardarSegredo("O Lucas lê apenas 1 livro por ano")
+
+        /*senha errada*/
+
+        console.log("\ntentando acessar com senha errada:")
+        console.log(cofre.lerSegredo("1111"))
+        console.log(cofre.lerSegredo("1111"))
+        console.log(cofre.lerSegredo("1111"))
+
+        /*cofre bloqueado*/
+
+        console.log("\ntentando acessar com o cofre tranacado:")
+        cofre.GuardarSegredo("Amanda lê mais de um livro por ano")
+        console.log(cofre.lerSegredo("1234"))
+
+        /*senha correta*/
+
+        console.log("\ntentando acessar com senha correta:")
+        console.log(cofre.lerSegredo("1234"))
+
+    </script>
+</head>
+
+<body>
+    <h1>abra console pra ver todos os testes</h1>
+</body>
+
+</html>

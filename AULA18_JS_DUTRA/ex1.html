@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex1</title>
+    <script>
+        class ContaBancaria {
+            constructor() {
+                this.saldo = 0;  
+            }
+        
+            depositar(valor) {
+                if (valor <= 0) {
+                    console.log("Valor de depósito inválido! O valor deve ser maior que zero.");
+                    return;
+                }
+                this.saldo += valor;
+                console.log(`Depósito de R$${valor.toFixed(2)} realizado com sucesso.`);
+            }
+        
+            sacar(valor) {
+                if (valor <= 0) {
+                    console.log("Valor de saque inválido! O valor deve ser maior que zero.");
+                    return;
+                }
+                if (valor > this.saldo) {
+                    console.log("Saldo insuficiente para o saque.");
+                    return;
+                }
+                this.saldo -= valor;
+                console.log(`Saque de R$${valor.toFixed(2)} realizado com sucesso.`);
+            }
+        
+            getSaldo() {
+                return `R$ ${this.saldo.toFixed(2).replace(".", ",")}`;
+            }
+        }
+        
+        const minhaConta = new ContaBancaria();
+        console.log(minhaConta.getSaldo());  
+        
+        minhaConta.depositar(1000);
+        console.log(minhaConta.getSaldo());  
+        
+        minhaConta.sacar(150);
+        console.log(minhaConta.getSaldo());  
+        
+        minhaConta.sacar(1000);  
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

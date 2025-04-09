@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex5</title>
+    <script>
+        class animal {
+            constructor (cachorro,gato,passaro){
+                this.cachorro = cachorro;
+                this.gato = gato;
+                this.passaro = passaro;
+            }
+           EmitirSons(){
+            console.log(`${this.cachorro} Au!`)
+            console.log(`${this.gato} Miau!`)
+            console.log(`${this.passaro} Piu!`)
+           }
+        }
+
+        const barulho = new animal("cachorro:","gato:","passáro:");{
+        console.log(barulho)  
+        console.log(barulho.cachorro);
+        console.log(barulho.gato);
+        console.log(barulho.passaro);
+        console.log(barulho.EmitirSons());
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
