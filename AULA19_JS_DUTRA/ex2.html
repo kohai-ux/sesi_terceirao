@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Composição - Computador</title>
+    <script>
+        
+
+        class CPU {
+            constructor(modelo) {
+                this.modelo = modelo || "Genérico"; 
+                console.log(`CPU ${this.modelo} criada.`);
+            }
+
+            processar(dados) {
+                console.log(`CPU ${this.modelo}: Processando ${dados}...`);
+            
+                return `Resultado de ${dados}`;
+            }
+
+            iniciar() {
+                 console.log(`CPU ${this.modelo} iniciada.`);
+            }
+        }
+
+        class RAM {
+            constructor(capacidade) {
+                this.capacidade = capacidade || "8GB"; 
+                this.memoria = {}; 
+                console.log(`RAM ${this.capacidade} criada.`);
+            }
+
+            armazenar(chave, valor) {
+                console.log(`RAM ${this.capacidade}: Armazenando '${valor}' na chave '${chave}'.`);
+                this.memoria[chave] = valor;
+            }
+
+            ler(chave) {
+                console.log(`RAM ${this.capacidade}: Lendo da chave '${chave}'.`);
+                return this.memoria[chave];
+            }
+
+             verificar() {
+                console.log(`RAM ${this.capacidade} verificada.`);
+            }
+        }
+
+        class DiscoRigido {
+            constructor(capacidade, tipo = "HDD") {
+                this.capacidade = capacidade || "500GB"; 
+                this.tipo = tipo;
+                console.log(`Disco Rígido ${this.tipo} ${this.capacidade} criado.`);
+            }
+
+            gravar(dados) {
+                console.log(`Disco ${this.tipo} ${this.capacidade}: Gravando dados...`);
+               
+            }
+
+            lerBoot() {
+                console.log(`Disco ${this.tipo} ${this.capacidade}: Lendo setor de boot.`);
+                return "Dados do Bootloader";
+            }
+        }
+
+        
+
+        class Computador {
+            constructor(modeloCPU, capacidadeRAM, capacidadeDisco, tipoDisco) {
+                console.log("Montando o Computador...");
+               
+                this.cpu = new CPU(modeloCPU);
+                this.ram = new RAM(capacidadeRAM);
+                this.disco = new DiscoRigido(capacidadeDisco, tipoDisco);
+                console.log("Computador montado com sucesso!");
+            }
+
+            ligar() {
+                console.log("\n--- Iniciando o Computador ---");
+                this.cpu.iniciar();
+                this.ram.verificar();
+                const bootData = this.disco.lerBoot();
+                this.ram.armazenar("bootloader", bootData);
+                const loadedData = this.ram.ler("bootloader");
+                this.cpu.processar(loadedData);
+                console.log("--- Computador Ligado e Pronto! ---");
+            }
+
+            mostrarEspecificacoes() {
+                console.log("\n--- Especificações do Computador ---");
+                console.log(`- Processador: ${this.cpu.modelo}`);
+                console.log(`- Memória RAM: ${this.ram.capacidade}`);
+                console.log(`- Armazenamento: ${this.disco.tipo} ${this.disco.capacidade}`);
+                console.log("------------------------------------");
+            }
+
+            executarTarefa(tarefa) {
+                 console.log(`\nExecutando tarefa: ${tarefa}`);
+                 this.ram.armazenar("tarefa_atual", tarefa);
+                 let dadosTarefa = this.ram.ler("tarefa_atual");
+                 let resultado = this.cpu.processar(dadosTarefa);
+                 this.disco.gravar(resultado); 
+                 console.log(`Tarefa "${tarefa}" concluída. Resultado salvo.`);
+            }
+        }
+
+        
+        console.log("Criando um novo computador...");
+        const meuPC = new Computador("Intel Core i9", "64GB", "2TB", "SSD NVMe");
+
+        meuPC.mostrarEspecificacoes();
+
+        meuPC.ligar();
+
+        meuPC.executarTarefa("Renderizar vídeo 4K");
+
+    </script>
+</head>
+<body>
+    <h1>Exemplo de Composição - Computador</h1>
+    <p>Verifique o console do navegador (F12) para ver a saída.</p>
+</body>
+</html>

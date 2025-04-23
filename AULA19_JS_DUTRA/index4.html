@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getter/setter</title>
+    <script>
+        class Pessoa{
+            constructor(nome){
+                this._nome = nome
+            }
+            get nome(){
+                return this._nome.toUpperCase()
+            }
+
+            set nome(novoNome){
+                if(novoNome.lenght<2){
+                    throw new Error("Nome muito curto")
+                }
+
+                this._nome = novoNome
+            }
+        }
+
+        const pessoa = new Pessoa("Lucas")
+        console.log(pessoa.nome)
+        pessoa.nome = "Maria"
+        console.log(pessoa.nome)
+        
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

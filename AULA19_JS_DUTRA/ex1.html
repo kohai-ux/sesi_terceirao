@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polimorfismo</title>
+    <script>
+        class Veiculo {
+            mover(){
+                console.log("Preparando")
+            }
+        }
+
+        class Carro extends Veiculo{
+            mover(){
+                console.log("Vroom! Carro acelerando!")
+            }
+        }
+
+        class Barco extends Veiculo{
+            mover(){
+                console.log("Todos a bordo!")
+            }
+        }
+
+        const meios = [new Carro(), new Barco()]
+        meios.forEach(medio=>medio.mover())
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

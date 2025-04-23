@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex5</title>
+    <script>
+class Animal {
+    constructor() {
+        if (this.constructor === Animal) {
+            throw new Error("Não é possível instanciar uma classe abstrata diretamente");
+        }
+    }
+
+    comer() {
+        throw new Error("O método 'comer' deve ser implementado por subclasses");
+    }
+}
+
+class Coelho extends Animal {
+    constructor(nome) {
+        super();
+        this.nome = nome;
+    }
+
+    comer() {
+        console.log(`${this.nome} está comendo cenouras!`);
+    }
+}
+
+class Girafa extends Animal {
+    constructor(nome) {
+        super();
+        this.nome = nome
+    }
+
+    comer() {
+        console.log(`${this.nome} está comendo folhas!`);
+    }
+}
+
+try {
+    const animal = new Animal(); 
+} catch (e) {
+    console.log(e.message);
+}
+
+const coelho = new Coelho("Geromel");
+coelho.comer();
+
+const girafa = new Girafa('Kanemann');
+girafa.comer(); 
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

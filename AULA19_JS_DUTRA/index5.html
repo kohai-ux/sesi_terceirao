@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes abstratas</title>
+    <script>
+        class Forma {
+            constructor(){
+                if(new.target===Forma){
+                    throw new Error('Forma é abstrata! Não pode ser instanciada.')
+                }
+            }
+            calcularArea(){
+                throw new Error('Metodo abstrato! Implemente na subclasse');
+            }
+        }
+        class Circulo extends Forma {
+            constructor(raio){
+                super();
+                this.raio=raio;
+            }
+            calcularArea(){
+                return Math.PI*this.raio**2;
+            }
+        }
+        //const forma = new Forma();
+        const circulo = new Circulo(10);
+        console.log(circulo.calcularArea());
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

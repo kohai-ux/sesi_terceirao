@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Polimorfismo com herança</title>
+    <script>
+        class Animal {
+            fazersom(){
+                console.log("Som genérico...")
+            }
+        }
+
+        class Cachorro extends Animal{
+            fazersom(){
+                console.log("Au Au!")
+            }
+        }
+
+        class Gato extends Animal{
+            fazersom(){
+                console.log("Miau!")
+            }
+        }
+
+        const pets = [new Cachorro(), new Gato()]
+        pets.forEach(pet=>pet.fazersom())
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

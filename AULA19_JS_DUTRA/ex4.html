@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getters/setters com produtos</title>
+    <script>
+        class Produto {
+            constructor(preco) {
+                this._preco = preco;
+            }
+
+            get preco() {
+                return this._preco;
+            }
+
+            set preco(novoPreco) {
+                if (novoPreco < 0) { 
+                    throw new Error("Preço inválido");
+                }
+                this._preco = novoPreco;
+            }
+        }
+
+        try {
+            const produto = new Produto(-1);
+            console.log(produto.preco);
+        } catch (e) {
+            console.log(e.message); 
+        }
+
+        try {
+            const produto = new Produto(10);
+            console.log(produto.preco);
+            produto.preco = -5;
+        } catch (e) {
+            console.log(e.message);
+        }
+    </script>    
+</head>
+<body>
+    
+</body>
+</html>
