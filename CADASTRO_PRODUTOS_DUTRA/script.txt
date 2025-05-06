@@ -1,0 +1,54 @@
+class Produto {
+    #preco;
+    #quantidade;
+
+    constructor(nome, preco, quantidade) {
+        if (!nome || isNaN(preco) || isNaN(quantidade) || preco < 0 || quantidade < 0) {
+            throw new Error("Dados inválidos para criar um produto.");
+        }
+
+        this.nome = nome;
+        this.#preco = parseFloat(preco);
+        this.#quantidade = parseInt(quantidade);
+    }
+
+    get preco() {
+        return this.#preco;
+    }
+
+    get quantidade() {
+        return this.#quantidade;
+    }
+
+    descricao() {
+        return `Produto: ${this.nome}, Preço: R$${this.preco.toFixed(2)}, Quantidade: ${this.quantidade}`;
+    }
+}
+
+document.getElementById("produto-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const nome = document.getElementById("nome").value;
+    const preco = document.getElementById("preco").value;
+    const quantidade = document.getElementById("quantidade").value;
+
+    try {
+        const novoProduto = new Produto(nome, preco, quantidade);
+
+
+        const lista = document.getElementById("lista-produtos").getElementsByTagName("tbody")[0];
+        const row = lista.insertRow(); 
+
+        const cellNome = row.insertCell(0);
+        const cellPreco = row.insertCell(1);
+        const cellQuantidade = row.insertCell(2);
+
+        cellNome.textContent = novoProduto.nome;
+        cellPreco.textContent = `R$${novoProduto.preco.toFixed(2)}`;
+        cellQuantidade.textContent = novoProduto.quantidade;
+
+        e.target.reset();
+    } catch (erro) {
+        alert("Erro ao criar produto: " + erro.message);
+    }
+});
