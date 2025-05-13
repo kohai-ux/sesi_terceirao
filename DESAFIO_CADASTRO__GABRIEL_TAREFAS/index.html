@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Tarefas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Cadastro de Tarefa</h1>
+        <form id="task-form">
+            <label for="titulo">Título:</label>
+            <input type="text" id="titulo" placeholder="Título" required>
+            <label for="descricao">Descrição:</label>
+            <input type="text" id="descricao" placeholder="Descrição" required>
+            <label for="responsavel">Responsável:</label>
+            <input type="text" id="responsavel" placeholder="Responsável" required>
+            <label for="status">Status:</label>
+            <select id="status">
+                <option value="pendente">Pendente</option>
+                <option value="em progresso">Em Progresso</option>
+                <option value="concluída">Concluída</option>
+            </select>
+            <button type="submit">Adicionar Tarefa</button>
+        </form>
+
+        <h2>Lista de Tarefas</h2>
+        <table id="lista-tarefas">
+            <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Descrição</th>
+                    <th>Responsável</th>
+                    <th>Status</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Tarefas serão inseridas aqui -->
+            </tbody>
+        </table>
+        <div id="contagem-tarefas">
+            <p>Tarefas: <span id="total-tarefas">0</span></p>
+            <p>Pendentes: <span id="tarefas-pendentes">0</span></p>
+            <p>Em Progresso: <span id="tarefas-em-progresso">0</span></p>
+            <p>Concluídas: <span id="tarefas-concluidas">0</span></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
